@@ -1,4 +1,4 @@
-# TeleportEscapee
+# LczArmoryDoorBlock
 ## Description
 **[SCP:SL](https://scpslgame.com/)[^scpsl] plugin using [NwAPI](https://github.com/northwood-studios/NwPluginAPI)[^nwapi].**
 
