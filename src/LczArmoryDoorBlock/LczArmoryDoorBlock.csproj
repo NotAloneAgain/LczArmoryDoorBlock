@@ -33,16 +33,10 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="UnityEngine.AnimationModule" HintPath="$(LIBS)\UnityEngine.AnimationModule.dll" Private="false" />
     <Reference Include="Assembly-CSharp-Publicized" HintPath="$(LIBS)\Assembly-CSharp-Publicized.dll" Private="false" />
     <Reference Include="Assembly-CSharp-firstpass" HintPath="$(LIBS)\Assembly-CSharp-firstpass.dll" Private="false" />
-    <Reference Include="UnityEngine.PhysicsModule" HintPath="$(LIBS)\UnityEngine.PhysicsModule.dll" Private="false" />
-    <Reference Include="UnityEngine.AudioModule" HintPath="$(LIBS)\UnityEngine.AudioModule.dll" Private="false" />
     <Reference Include="UnityEngine.CoreModule" HintPath="$(LIBS)\UnityEngine.CoreModule.dll" Private="false" />
-    <Reference Include="CommandSystem.Core" HintPath="$(LIBS)\CommandSystem.Core.dll" Private="false" />
-    <Reference Include="YamlDotNet" HintPath="$(LIBS)\YamlDotNet.dll" Private="false" />
     <Reference Include="PluginAPI" HintPath="$(LIBS)\PluginAPI.dll" Private="false" />
-    <Reference Include="0Harmony" HintPath="$(LIBS)\0Harmony.dll" Private="false" />
     <Reference Include="Mirror" HintPath="$(LIBS)\Mirror.dll" Private="false" />
     <Reference Include="System.Core" />
     <Reference Include="System" />
