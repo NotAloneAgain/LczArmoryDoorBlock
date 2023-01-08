@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Interactables.Interobjects.DoorUtils;
 using MapGeneration;
 using MEC;
@@ -25,8 +24,6 @@ namespace LczArmoryDoorBlock
 
         static EventHandlers()
             => _players = new (NetworkServer.maxConnections);
-
-        private static Func<DoorVariant, bool> FindLczArmoryByName => door => FindName(door) == "LCZ_ARMORY";
 
         [PluginEvent(ServerEventType.RoundStart)]
         public void OnRoundStart()
@@ -83,13 +80,6 @@ namespace LczArmoryDoorBlock
             _players.Clear();
         }
 
-        private static string FindName(DoorVariant door)
-        {
-            DoorNametagExtension nametag = door.GetComponent<DoorNametagExtension>();
-
-            return string.IsNullOrEmpty(nametag.GetName) ? door.name.Trim() : nametag.GetName.Trim();
-        }
-
         private static string GetLockedText()
             => "<size=125%><color=#FF0000>Дверь заблокирована!</color></size>"
                + $"<size=95%><color=#FFFF00>\nОна откроется через {GetSecondsEnding(Mathf.RoundToInt((float)(DateTime.Now - _lockTime).TotalSeconds))}.</color></size>";
@@ -120,7 +110,7 @@ namespace LczArmoryDoorBlock
         private static void DelayCall() => Timing.CallDelayed(Random.Range(160, 240), UnlockArmory);
 
         private static void FindLczArmory()
-            => _armory = DoorVariant.AllDoors.First(FindLczArmoryByName);
+            => _armory = DoorNametagExtension.NamedDoors["LCZ_ARMORY"].TargetDoor;
 
         private static void LockArmory()
             => _armory.ServerChangeLock(DoorLockReason.None, true);
